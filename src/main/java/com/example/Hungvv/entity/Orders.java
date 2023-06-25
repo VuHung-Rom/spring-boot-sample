@@ -5,46 +5,46 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.Date;
 @Entity
-public class Order {
+public class Orders {
     @Id
     @Column()
-    private int ordId;
+    private int ordid;
     @Column
-    private int customerId;
+    private int customerid;
     @Column
-    private int productId;
+    private int productid;
     @Column
-    private Date orderDate;
+    private Date orderdate;
 
-    public int getOrdId() {
-        return ordId;
+    public int getOrdid() {
+        return ordid;
     }
 
-    public void setOrdId(int ordId) {
-        this.ordId = ordId;
+    public void setOrdid(int ordid) {
+        this.ordid = ordid;
     }
 
-    public int getCustomerId() {
-        return customerId;
+    public int getCustomerid() {
+        return customerid;
     }
 
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
+    public void setCustomerid(int customerid) {
+        this.customerid = customerid;
     }
 
-    public int getProductId() {
-        return productId;
+    public int getProductid() {
+        return productid;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
+    public void setProductid(int productid) {
+        this.productid = productid;
     }
 
-    public Date getOrderDate() {
-        return orderDate;
+    public Date getOrderdate() {
+        return orderdate;
     }
 
-    public void setOrderDate(Date orderDate) {
-        this.orderDate = orderDate;
+    public void setOrderDate(Date orderdate) {
+        this.orderdate = orderdate;
     }
 }

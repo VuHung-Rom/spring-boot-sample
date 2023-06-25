@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface OrderRespository extends CrudRepository <Orders,Integer> {
-    @Query(nativeQuery = true, value = "SELECT * from ORDERS where ordid = ordid")
+public interface OrdersRespository extends CrudRepository <Orders,Integer> {
+    @Query(nativeQuery = true, value = "SELECT * from ORDERS a where a.ordid like  :ordid")
     List<Orders> findOrdersBy(int ordid);
 }
