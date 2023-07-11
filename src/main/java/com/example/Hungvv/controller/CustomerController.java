@@ -9,39 +9,38 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-
+@RequestMapping("/customer")
 public class CustomerController {
     @Autowired
     CustomerRespository customerRespository;
 
-    @GetMapping("/Customer")
+    @GetMapping()
     List<Customer> all() {
         List<Customer> customerList = new ArrayList<>();
         customerRespository.findAll().forEach(customer -> customerList.add(customer));
         return customerList;
 
     }
-    @GetMapping("/Customer/findCustomerBy/{customerid}")
+    @GetMapping("/findCustomerBy/{customerid}")
     List<Customer> findCustomerBy(@PathVariable int customerid) {
         List<Customer> customerList = new ArrayList<>();
         customerRespository.findCustomerBy(customerid).forEach(customer -> customerList.add(customer));
         return customerList;
     }
 
-    @GetMapping("/Customer/{id}")
+    @GetMapping("/{id}")
     Customer get(@PathVariable int id) {
         return customerRespository.findById(id).get();
-
     }
-    @PostMapping("/Customer")
+    @PostMapping()
     Customer save(@RequestBody Customer customer ) {
         return customerRespository.save(customer);
     }
-    @PutMapping("/Customer")
+    @PutMapping()
     Customer update(@RequestBody Customer customer) {
         return customerRespository.save(customer);
     }
-    @DeleteMapping("/Customer/{id}")
+    @DeleteMapping("/{id}")
     void delete(@PathVariable Integer id) {
 //
         customerRespository.deleteById(id);
