@@ -29,6 +29,5 @@ public class CustomerService {
         customerRepository.deleteById(Math.toIntExact(id));
     }
 
-
 }
 
